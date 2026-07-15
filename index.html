@@ -10,15 +10,6 @@
 </head>
 <body>
 
-    <!-- ═══════════════ PRE-LOADER ═══════════════ -->
-    <div id="comic-loader" class="comic-loader">
-        <div class="comic-halftone-texture"></div>
-        <div class="loader-content">
-            <h1 class="loader-text">LOADING MISSION...</h1>
-            <div class="loader-spinner"></div>
-        </div>
-    </div>
-
     <!-- ═══════════════ COMIC PANEL INDICATOR ═══════════════ -->
     <div class="comic-panel-indicator" id="panel-indicator">
         <span class="panel-dot active" data-panel="0"></span>
@@ -606,17 +597,6 @@
             });
         }
     });
-    </script>
-    <script>
-        // Remove Pre-loader when all assets (images, videos, iframes) have fully loaded
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('comic-loader');
-            if (loader) {
-                loader.classList.add('loaded');
-                // Optional: completely remove it from DOM after transition
-                setTimeout(() => loader.remove(), 1000);
-            }
-        });
     </script>
 </body>
 </html>
