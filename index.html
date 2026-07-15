@@ -282,60 +282,72 @@
 
     <!-- ═══════════════ PANEL 4 — CONTACT ═══════════════ -->
     <div class="comic-panel contact-section" id="panel-contact">
-        <!-- Interactive Spotlight Background -->
-        <div class="contact-bg-spotlight"></div>
-        <div class="contact-bg-pattern"></div>
         
-        <div class="panel-border">
-            <div class="panel-corner panel-corner-tl"></div>
-            <div class="panel-corner panel-corner-tr"></div>
-            <div class="panel-corner panel-corner-bl"></div>
-            <div class="panel-corner panel-corner-br"></div>
-        </div>
+        <!-- Dual Image Canvas Spotlight Setup -->
+        <div class="contact-base-img" style="background-image:url('Character_with_mask_and_outfit_202607132314.jpeg');"></div>
+        <canvas id="contact-reveal-canvas" style="display: none;"></canvas>
+        <div class="contact-reveal-img" id="contact-reveal-img" style="background-image:url('Character_hanging_upside_down_web_202607141849.jpeg');"></div>
 
-        <div class="contact-content-wrapper">
-            <!-- Center Massive Headline & Graphic -->
-            <div class="contact-center">
-                <h2 class="contact-headline">ALWAYS<br><span class="highlight">READY FOR</span><br>THE NEXT MISSION.</h2>
-                <div class="contact-center-graphic">
-                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=400" alt="Spider Graphic" />
-                    <div class="comic-dots-overlay"></div>
+        <!-- UI Layer (Everything above the images) -->
+        <div class="contact-ui-layer">
+            
+            <!-- Top Bar -->
+            <div class="contact-top-bar">
+                <div class="contact-logo">YASSINE<br>CHAIBI</div>
+                <div class="contact-top-right">
+                    <a href="#" class="contact-store-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        STORE
+                    </a>
+                    <button class="contact-menu-btn">
+                        <span></span><span></span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Left Links -->
-            <div class="contact-left">
-                <h3 class="contact-subheading">CONTACT</h3>
-                <ul class="contact-links">
-                    <li><a href="mailto:chaibiyassine0801@gmail.com">EMAIL ME</a></li>
-                    <li><a href="#">WHATSAPP</a></li>
-                    <li class="contact-email-text">chaibiyassine0801@gmail.com</li>
-                </ul>
+            <!-- Center Headline -->
+            <div class="contact-headline-wrap">
+                <div class="contact-signature">Let's build something amazing</div>
+                <h2 class="contact-headline">ALWAYS <span class="accent-word">BRINGING</span><br>THE FIGHT.</h2>
             </div>
 
-            <!-- Right Links -->
-            <div class="contact-right">
-                <h3 class="contact-subheading">FOLLOW ON</h3>
-                <ul class="contact-links">
-                    <li><a href="#" target="_blank">LINKEDIN</a></li>
-                    <li><a href="#" target="_blank">GITHUB</a></li>
-                    <li><a href="#" target="_blank">TWITTER</a></li>
-                    <li><a href="#" target="_blank">INSTAGRAM</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Bottom Marquee & Button -->
-        <div class="contact-footer">
-            <div class="marquee-container">
-                <div class="marquee-content">
-                    <span>HTML</span> <span>CSS</span> <span>JAVASCRIPT</span> <span>REACT</span> <span>NODE.JS</span> <span>WEB DESIGN</span> <span>FIGMA</span> <span>UI/UX</span> <span>TAILWIND</span>
-                    <span>HTML</span> <span>CSS</span> <span>JAVASCRIPT</span> <span>REACT</span> <span>NODE.JS</span> <span>WEB DESIGN</span> <span>FIGMA</span> <span>UI/UX</span> <span>TAILWIND</span>
+            <!-- Left & Right Columns -->
+            <div class="contact-columns">
+                <div class="contact-col left-col">
+                    <div class="col-label">PAGES</div>
+                    <ul class="col-nav">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ON TRACK</a></li>
+                        <li><a href="#">OFF TRACK</a></li>
+                        <li><a href="#">CALENDAR</a></li>
+                        <li><a href="#" class="accent-link">STORE</a></li>
+                    </ul>
+                </div>
+                <div class="contact-col right-col">
+                    <div class="col-label">FOLLOW ON</div>
+                    <ul class="col-nav">
+                        <li><a href="#">TIKTOK</a></li>
+                        <li><a href="#">INSTAGRAM</a></li>
+                        <li><a href="#">YOUTUBE</a></li>
+                        <li><a href="#">TWITCH</a></li>
+                    </ul>
                 </div>
             </div>
-            <a href="mailto:chaibiyassine0801@gmail.com" class="business-btn">BUSINESS ENQUIRIES <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+
+            <!-- Bottom Bar -->
+            <div class="contact-bottom-bar">
+                <div class="partner-logos">
+                    <span>Google</span>
+                    <span>Ralph Lauren</span>
+                    <span>Android</span>
+                    <span>Uber</span>
+                    <span>Quadrant</span>
+                    <span>Bell</span>
+                </div>
+                <a href="mailto:chaibiyassine0801@gmail.com" class="contact-cta-btn">BUSINESS ENQUIRIES <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+            </div>
+
         </div>
-        <div class="panel-caption" style="bottom: 80px; z-index: 50;">PANEL 04</div>
     </div>
 
     <!-- ═══════════════════════════════════════════════════ -->
@@ -599,17 +611,92 @@
             });
         });
 
-        // ── 4. Contact Section Spotlight Effect ──
-        const contactSection = document.getElementById('panel-contact');
-        if (contactSection) {
-            contactSection.addEventListener('mousemove', e => {
+        // ── 4. Contact Section Canvas Spotlight Reveal ──
+        (function() {
+            const SPOTLIGHT_R = window.innerWidth < 768 ? 150 : 250;
+            const canvas = document.getElementById('contact-reveal-canvas');
+            const imgLayer = document.getElementById('contact-reveal-img');
+            const contactSection = document.getElementById('panel-contact');
+            
+            if (!canvas || !imgLayer || !contactSection) return;
+            
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() { 
                 const rect = contactSection.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                contactSection.style.setProperty('--mouse-x', `${x}px`);
-                contactSection.style.setProperty('--mouse-y', `${y}px`);
+                canvas.width = rect.width; 
+                canvas.height = rect.height; 
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const mouse = { x: -999, y: -999 };
+            const smooth = { x: -999, y: -999 };
+            let isHovering = false;
+
+            contactSection.addEventListener('mousemove', e => { 
+                // Get mouse coordinates relative to the contact section
+                const rect = contactSection.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left; 
+                mouse.y = e.clientY - rect.top; 
+                isHovering = true;
             });
-        }
+            
+            contactSection.addEventListener('mouseleave', () => {
+                isHovering = false;
+            });
+
+            // Touch fallback for mobile
+            contactSection.addEventListener('touchmove', e => {
+                if (e.touches.length > 0) {
+                    const rect = contactSection.getBoundingClientRect();
+                    mouse.x = e.touches[0].clientX - rect.left;
+                    mouse.y = e.touches[0].clientY - rect.top;
+                    isHovering = true;
+                }
+            });
+
+            let time = 0;
+
+            function loop() {
+                // If not hovering, do an auto-looping figure-8 or drift
+                if (!isHovering) {
+                    time += 0.01;
+                    const cx = canvas.width / 2;
+                    const cy = canvas.height / 2;
+                    // Gentle figure-8 path
+                    mouse.x = cx + Math.sin(time * 1.5) * (canvas.width * 0.25);
+                    mouse.y = cy + Math.sin(time * 3) * (canvas.height * 0.15);
+                }
+
+                smooth.x += (mouse.x - smooth.x) * 0.1;
+                smooth.y += (mouse.y - smooth.y) * 0.1;
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const grad = ctx.createRadialGradient(smooth.x, smooth.y, 0, smooth.x, smooth.y, SPOTLIGHT_R);
+                grad.addColorStop(0, 'rgba(255,255,255,1)');
+                grad.addColorStop(0.4, 'rgba(255,255,255,1)');
+                grad.addColorStop(0.6, 'rgba(255,255,255,0.75)');
+                grad.addColorStop(0.75, 'rgba(255,255,255,0.4)');
+                grad.addColorStop(0.88, 'rgba(255,255,255,0.12)');
+                grad.addColorStop(1, 'rgba(255,255,255,0)');
+
+                ctx.beginPath();
+                ctx.arc(smooth.x, smooth.y, SPOTLIGHT_R, 0, Math.PI * 2);
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                const dataUrl = canvas.toDataURL();
+                imgLayer.style.webkitMaskImage = 'url(' + dataUrl + ')';
+                imgLayer.style.maskImage = 'url(' + dataUrl + ')';
+                imgLayer.style.webkitMaskSize = '100% 100%';
+                imgLayer.style.maskSize = '100% 100%';
+
+                requestAnimationFrame(loop);
+            }
+            requestAnimationFrame(loop);
+        })();
     });
     </script>
 </body>
