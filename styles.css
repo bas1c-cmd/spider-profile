@@ -548,10 +548,11 @@ body {
 .panel-7 { grid-column: span 2; grid-row: span 1; } /* Wide strip */
 .panel-8 { grid-column: span 1; grid-row: span 1; } /* Small square */
 .panel-9 { grid-column: span 2; grid-row: span 1; } /* Wide strip */
+.panel-10 { grid-column: span 2; grid-row: span 1; } /* Wide strip */
 
 @media (max-width: 1024px) {
     .panel-1 { grid-column: span 2; grid-row: span 2; }
-    .panel-4, .panel-7 { grid-column: span 2; }
+    .panel-4, .panel-7, .panel-9, .panel-10 { grid-column: span 2; }
 }
 @media (max-width: 600px) {
     .grid-panel { grid-column: span 1 !important; grid-row: span 1 !important; }
