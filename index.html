@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yassine - Spider-Man Theme</title>
+    <link rel="stylesheet" href="styles.css?v=5">
+    <!-- Google Fonts for a comic book style -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ═══════════════ COMIC PANEL INDICATOR ═══════════════ -->
+    <div class="comic-panel-indicator" id="panel-indicator">
+        <span class="panel-dot active" data-panel="0"></span>
+        <span class="panel-dot" data-panel="1"></span>
+        <span class="panel-dot" data-panel="2"></span>
+    </div>
+
+    <!-- ═══════════════ PANEL 1 — HERO ═══════════════ -->
+    <div class="comic-panel" id="panel-hero">
+        <div class="panel-border">
+            <div class="panel-corner panel-corner-tl"></div>
+            <div class="panel-corner panel-corner-tr"></div>
+            <div class="panel-corner panel-corner-bl"></div>
+            <div class="panel-corner panel-corner-br"></div>
+        </div>
+        <section class="hero-section">
+            <!-- Mouse reveal background effect -->
+            <div class="hero-wrap">
+                <div class="hero-base-img" style="background-image:url('Character_face_textured_backgrou…_2K_202607132149.jpeg');"></div>
+                <canvas id="reveal-canvas"></canvas>
+                <div class="hero-reveal-img" id="reveal-img" style="background-image:url('Change_character_to_cartoon_mask_202607132333.jpeg');"></div>
+            </div>
+
+            <!-- Content in the left corner -->
+            <div class="hero-content">
+                <div class="left-corner-container">
+                    <h1 class="name-title">YASSINE</h1>
+                    <h2 class="subtitle-info">Website Developer &amp; Designer</h2>
+                    <button class="spidey-btn">
+                        <span class="btn-text">Sling Web to Explore</span>
+                        <span class="btn-shadow"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Panel number caption -->
+            <div class="panel-caption">PANEL 01</div>
+        </section>
+    </div>
+
+    <!-- ═══════════════ COMIC GUTTER (Hero → About) ═══════════════ -->
+    <div class="comic-gutter" id="gutter-1">
+        <div class="gutter-inner">
+            <!-- Action lines SVG burst -->
+            <svg class="action-lines" viewBox="0 0 1200 200" preserveAspectRatio="none">
+                <g class="action-lines-group">
+                    <line x1="600" y1="100" x2="0"    y2="0"   stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="600" y1="100" x2="150"  y2="0"   stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="300"  y2="0"   stroke="#0033cc" stroke-width="1" opacity="0.3"/>
+                    <line x1="600" y1="100" x2="450"  y2="0"   stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="600" y1="100" x2="750"  y2="0"   stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="900"  y2="0"   stroke="#e23636" stroke-width="1" opacity="0.3"/>
+                    <line x1="600" y1="100" x2="1050" y2="0"   stroke="#0033cc" stroke-width="2" opacity="0.5"/>
+                    <line x1="600" y1="100" x2="1200" y2="0"   stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="0"    y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="150"  y2="200" stroke="#e23636" stroke-width="1" opacity="0.3"/>
+                    <line x1="600" y1="100" x2="300"  y2="200" stroke="#0033cc" stroke-width="2" opacity="0.5"/>
+                    <line x1="600" y1="100" x2="450"  y2="200" stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="750"  y2="200" stroke="#0033cc" stroke-width="1" opacity="0.3"/>
+                    <line x1="600" y1="100" x2="900"  y2="200" stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="600" y1="100" x2="1050" y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="1200" y2="200" stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                </g>
+            </svg>
+            <span class="gutter-sfx">THWIP!</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════ PANEL 2 — ABOUT ME ═══════════════ -->
+    <div class="comic-panel" id="panel-about">
+        <div class="panel-border">
+            <div class="panel-corner panel-corner-tl"></div>
+            <div class="panel-corner panel-corner-tr"></div>
+            <div class="panel-corner panel-corner-bl"></div>
+            <div class="panel-corner panel-corner-br"></div>
+        </div>
+        <section class="about-me-section" id="about-me">
+            <video class="about-me-video" id="about-video" muted playsinline preload="auto">
+                <source src="lmosta3mal 2.mp4" type="video/mp4">
+            </video>
+
+            <div class="about-me-card">
+                <h2>About Me</h2>
+                <p>I am a passionate Website Developer &amp; Designer specializing in creating immersive, high-performance web experiences. Combining cutting-edge technology with bold design aesthetics, I build digital worlds that captivate users.</p>
+                <p class="highlight">Ready to leap into the next dimension of web design?</p>
+            </div>
+
+            <div class="panel-caption">PANEL 02</div>
+        </section>
+    </div>
+
+    <!-- ═══════════════ COMIC GUTTER (About → Projects) ═══════════════ -->
+    <div class="comic-gutter" id="gutter-2">
+        <div class="gutter-inner">
+            <svg class="action-lines" viewBox="0 0 1200 200" preserveAspectRatio="none">
+                <g class="action-lines-group">
+                    <line x1="0"   y1="100" x2="1200" y2="0"   stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="0"   y1="100" x2="1200" y2="50"  stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="0"   y1="100" x2="1200" y2="100" stroke="#e23636" stroke-width="1" opacity="0.3"/>
+                    <line x1="0"   y1="100" x2="1200" y2="150" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="0"   y1="100" x2="1200" y2="200" stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="200" y1="0"   x2="1000" y2="200" stroke="#0033cc" stroke-width="1" opacity="0.2"/>
+                    <line x1="400" y1="0"   x2="800"  y2="200" stroke="#e23636" stroke-width="1.5" opacity="0.3"/>
+                    <line x1="600" y1="0"   x2="600"  y2="200" stroke="#0033cc" stroke-width="2" opacity="0.4"/>
+                    <line x1="800" y1="0"   x2="400"  y2="200" stroke="#e23636" stroke-width="1" opacity="0.2"/>
+                    <line x1="1000" y1="0"  x2="200"  y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.3"/>
+                </g>
+            </svg>
+            <span class="gutter-sfx">WHOOSH!</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════ PANEL 3 — PROJECTS ═══════════════ -->
+    <div class="comic-panel" id="panel-projects">
+        <div class="panel-border">
+            <div class="panel-corner panel-corner-tl"></div>
+            <div class="panel-corner panel-corner-tr"></div>
+            <div class="panel-corner panel-corner-bl"></div>
+            <div class="panel-corner panel-corner-br"></div>
+        </div>
+        <div class="comic-grid-wrapper" id="projects-wrapper">
+            <div class="projects-header-grid">
+                <h2>THE PROJECT FILES</h2>
+                <p>HOVER TO REVEAL</p>
+            </div>
+            <div class="comic-page-grid">
+                <!-- Project 1 (Tall) -->
+                <div class="grid-panel panel-1">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://riham-construction.netlify.app" loading="lazy" scrolling="no" title="Riham Construction"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>RIHAM CONSTRUCTION</h3>
+                            <a href="https://riham-construction.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">THWIP!</div>
+                    </div>
+                </div>
+                <!-- Project 2 (Square) -->
+                <div class="grid-panel panel-2">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://3alem-o-t3alem.netlify.app/" loading="lazy" scrolling="no" title="3alem o T3alem"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>3ALEM O T3ALEM</h3>
+                            <a href="https://3alem-o-t3alem.netlify.app/" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">BAM!</div>
+                    </div>
+                </div>
+                <!-- Project 3 (Square) -->
+                <div class="grid-panel panel-3">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://ecomaroc-project.netlify.app/" loading="lazy" scrolling="no" title="EcoMaroc"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>ECOMAROC</h3>
+                            <a href="https://ecomaroc-project.netlify.app/" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">POW!</div>
+                    </div>
+                </div>
+                <!-- Project 4 (Wide) -->
+                <div class="grid-panel panel-4">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://prismaoa.netlify.app" loading="lazy" scrolling="no" title="Prisma OA"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>PRISMA OA</h3>
+                            <a href="https://prismaoa.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">SNIKT!</div>
+                    </div>
+                </div>
+                <!-- Project 5 (Square) -->
+                <div class="grid-panel panel-5">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://prmpti.netlify.app" loading="lazy" scrolling="no" title="Prmpti"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>PRMPTI</h3>
+                            <a href="https://prmpti.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">WHAM!</div>
+                    </div>
+                </div>
+                <!-- Project 6 (Tall) -->
+                <div class="grid-panel panel-6">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://studioslux.netlify.app" loading="lazy" scrolling="no" title="Studios Lux"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>STUDIOS LUX</h3>
+                            <a href="https://studioslux.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">ZAP!</div>
+                    </div>
+                </div>
+                <!-- Project 7 (Wide) -->
+                <div class="grid-panel panel-7">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://dashbordme.netlify.app" loading="lazy" scrolling="no" title="Dashbord Me"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>DASHBORD ME</h3>
+                            <a href="https://dashbordme.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">KRACK!</div>
+                    </div>
+                </div>
+                <!-- Project 8 (Square) -->
+                <div class="grid-panel panel-8">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://waletusd.netlify.app" loading="lazy" scrolling="no" title="Walet USD"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>WALET USD</h3>
+                            <a href="https://waletusd.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">BOOM!</div>
+                    </div>
+                </div>
+                <!-- Project 9 (Wide) -->
+                <div class="grid-panel panel-9">
+                    <div class="panel-inner">
+                        <div class="iframe-wrapper">
+                            <iframe src="https://adhdpre.netlify.app" loading="lazy" scrolling="no" title="ADHD Pre"></iframe>
+                        </div>
+                        <div class="comic-halftone-texture"></div>
+                        <div class="panel-content">
+                            <h3>ADHD PRE</h3>
+                            <a href="https://adhdpre.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                        </div>
+                        <div class="sfx-popup">SMASH!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ PANEL 4 — CONTACT ═══════════════ -->
+    <div class="comic-panel contact-section" id="panel-contact">
+        <!-- Interactive Spotlight Background -->
+        <div class="contact-bg-spotlight"></div>
+        <div class="contact-bg-pattern"></div>
+        
+        <div class="panel-border">
+            <div class="panel-corner panel-corner-tl"></div>
+            <div class="panel-corner panel-corner-tr"></div>
+            <div class="panel-corner panel-corner-bl"></div>
+            <div class="panel-corner panel-corner-br"></div>
+        </div>
+
+        <div class="contact-content-wrapper">
+            <!-- Center Massive Headline & Graphic -->
+            <div class="contact-center">
+                <h2 class="contact-headline">ALWAYS<br><span class="highlight">READY FOR</span><br>THE NEXT MISSION.</h2>
+                <div class="contact-center-graphic">
+                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=400" alt="Spider Graphic" />
+                    <div class="comic-dots-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Left Links -->
+            <div class="contact-left">
+                <h3 class="contact-subheading">CONTACT</h3>
+                <ul class="contact-links">
+                    <li><a href="mailto:chaibiyassine0801@gmail.com">EMAIL ME</a></li>
+                    <li><a href="#">WHATSAPP</a></li>
+                    <li class="contact-email-text">chaibiyassine0801@gmail.com</li>
+                </ul>
+            </div>
+
+            <!-- Right Links -->
+            <div class="contact-right">
+                <h3 class="contact-subheading">FOLLOW ON</h3>
+                <ul class="contact-links">
+                    <li><a href="#" target="_blank">LINKEDIN</a></li>
+                    <li><a href="#" target="_blank">GITHUB</a></li>
+                    <li><a href="#" target="_blank">TWITTER</a></li>
+                    <li><a href="#" target="_blank">INSTAGRAM</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Marquee & Button -->
+        <div class="contact-footer">
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span>HTML</span> <span>CSS</span> <span>JAVASCRIPT</span> <span>REACT</span> <span>NODE.JS</span> <span>WEB DESIGN</span> <span>FIGMA</span> <span>UI/UX</span> <span>TAILWIND</span>
+                    <span>HTML</span> <span>CSS</span> <span>JAVASCRIPT</span> <span>REACT</span> <span>NODE.JS</span> <span>WEB DESIGN</span> <span>FIGMA</span> <span>UI/UX</span> <span>TAILWIND</span>
+                </div>
+            </div>
+            <a href="mailto:chaibiyassine0801@gmail.com" class="business-btn">BUSINESS ENQUIRIES <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></a>
+        </div>
+        <div class="panel-caption" style="bottom: 80px; z-index: 50;">PANEL 04</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SCRIPTS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <script>
+    /* ── Hero Spotlight Reveal ── */
+    (function() {
+      const SPOTLIGHT_R = 260;
+      const canvas = document.getElementById('reveal-canvas');
+      const imgLayer = document.getElementById('reveal-img');
+      const ctx = canvas.getContext('2d');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+      const smooth = { x: canvas.width / 2, y: canvas.height / 2 };
+      let lastMouseMoveTime = 0;
+      const MOUSE_TIMEOUT = 2000;
+
+      window.addEventListener('mousemove', function(e) {
+        mouse.x = e.clientX; mouse.y = e.clientY;
+        lastMouseMoveTime = Date.now();
+      });
+      window.addEventListener('mouseleave', function() { lastMouseMoveTime = 0; });
+
+      function loop() {
+        const now = Date.now();
+        let targetX = mouse.x, targetY = mouse.y;
+        if (prefersReducedMotion.matches) {
+            targetX = canvas.width / 2; targetY = canvas.height / 2;
+        } else {
+            const timeSinceMouse = now - lastMouseMoveTime;
+            if (timeSinceMouse > MOUSE_TIMEOUT) {
+                const t = now * 0.001;
+                const ampX = canvas.width * 0.35, ampY = canvas.height * 0.35;
+                const cx = canvas.width / 2, cy = canvas.height / 2;
+                targetX = cx + Math.sin(t * 0.5) * ampX;
+                targetY = cy + Math.cos(t * 0.3) * ampY;
+                mouse.x = targetX; mouse.y = targetY;
+            }
+        }
+        smooth.x += (targetX - smooth.x) * 0.05;
+        smooth.y += (targetY - smooth.y) * 0.05;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var grad = ctx.createRadialGradient(smooth.x, smooth.y, 0, smooth.x, smooth.y, SPOTLIGHT_R);
+        grad.addColorStop(0, 'rgba(255,255,255,1)');
+        grad.addColorStop(0.4, 'rgba(255,255,255,1)');
+        grad.addColorStop(0.6, 'rgba(255,255,255,0.75)');
+        grad.addColorStop(0.75, 'rgba(255,255,255,0.4)');
+        grad.addColorStop(0.88, 'rgba(255,255,255,0.12)');
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.beginPath();
+        ctx.arc(smooth.x, smooth.y, SPOTLIGHT_R, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+        var dataUrl = canvas.toDataURL();
+        imgLayer.style.webkitMaskImage = 'url(' + dataUrl + ')';
+        imgLayer.style.maskImage = 'url(' + dataUrl + ')';
+        imgLayer.style.webkitMaskSize = '100% 100%';
+        imgLayer.style.maskSize = '100% 100%';
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    })();
+    </script>
+
+    <script>
+    /* ── About Me Video Ping-Pong ── */
+    (function() {
+      const aboutVideo = document.getElementById('about-video');
+      let isReversing = false;
+      let lastTime = performance.now();
+
+      function pingPong(now) {
+          if (!aboutVideo.duration) { lastTime = now; requestAnimationFrame(pingPong); return; }
+          const delta = (now - lastTime) / 1000;
+          lastTime = now;
+          if (!isReversing) {
+              if (aboutVideo.paused) aboutVideo.play().catch(e => {});
+              if (aboutVideo.currentTime >= aboutVideo.duration - 0.05) { isReversing = true; aboutVideo.pause(); }
+          } else {
+              if (!aboutVideo.paused) aboutVideo.pause();
+              aboutVideo.currentTime = Math.max(0, aboutVideo.currentTime - delta);
+              if (aboutVideo.currentTime <= 0.05) { isReversing = false; }
+          }
+          requestAnimationFrame(pingPong);
+      }
+      requestAnimationFrame(pingPong);
+    })();
+    </script>
+
+    <script>
+    /* ══════════════════════════════════════════════════
+       COMIC BOOK SCROLL TRANSITIONS
+       ══════════════════════════════════════════════════ */
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // ── 1. Panel scroll reveal animations ──
+        const panels = document.querySelectorAll('.comic-panel');
+        const gutters = document.querySelectorAll('.comic-gutter');
+        const dots = document.querySelectorAll('.panel-dot');
+
+        function animatePanels() {
+            const vh = window.innerHeight;
+
+            panels.forEach((panel, i) => {
+                const rect = panel.getBoundingClientRect();
+                
+                // Target progress based on exact scroll position
+                const targetProgress = rect.top / vh; 
+                const targetExitProgress = Math.max(0, Math.min(1, 1 - (rect.bottom / vh)));
+
+                // Initialize scroll data for physics (Lerp) if not exists
+                if (!panel.scrollData) {
+                    panel.scrollData = { progress: targetProgress, exitProgress: targetExitProgress };
+                }
+
+                // Apply Lerp (Linear Interpolation) for buttery smooth momentum
+                panel.scrollData.progress += (targetProgress - panel.scrollData.progress) * 0.08;
+                panel.scrollData.exitProgress += (targetExitProgress - panel.scrollData.exitProgress) * 0.08;
+
+                const progress = panel.scrollData.progress;
+                const exitProgress = panel.scrollData.exitProgress;
+
+                // Add 3D perspective to the panel container for true tumbling depth
+                panel.style.perspective = '1500px';
+
+                if (i === 0) {
+                    // Hero panel: peel away, turn black & white, go wide
+                    panel.style.transform = `scaleX(${1 + exitProgress * 0.15}) scaleY(${1 - exitProgress * 0.05}) rotate(${exitProgress * -2}deg)`;
+                    panel.style.filter = `grayscale(${exitProgress * 100}%) contrast(${100 + exitProgress * 50}%)`;
+                    panel.style.opacity = 1 - exitProgress * 0.3;
+                    
+                    // Internal Parallax for Hero
+                    const heroTitle = panel.querySelector('.hero-title');
+                    if (heroTitle) heroTitle.style.transform = `translateY(${exitProgress * 150}px)`;
+
+                } else {
+                    if (progress >= 1) {
+                        // Not in view yet (below screen)
+                        panel.style.opacity = 0;
+                        panel.style.transform = `translateY(120px) rotateX(-20deg) rotateY(${i % 2 === 0 ? 10 : -10}deg) scale(0.85)`;
+                        panel.style.filter = 'none';
+                    } else if (progress > 0 && rect.bottom > vh) {
+                        // Panel is entering from bottom (Tumbling 3D entrance)
+                        const enterT = Math.max(0, Math.min(1, 1 - progress)); // 0=just entering, 1=fully in
+
+                        const isEven = i % 2 === 0;
+                        const rotateZ = (1 - enterT) * (isEven ? 5 : -5);
+                        const rotateX = (1 - enterT) * -20; // Tumble backward
+                        const rotateY = (1 - enterT) * (isEven ? 10 : -10); 
+                        const translateY = (1 - enterT) * 150;
+                        const scale = 0.85 + enterT * 0.15;
+
+                        panel.style.transform = `translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`;
+                        panel.style.opacity = Math.min(1, enterT * 1.5);
+                        panel.style.filter = 'none';
+
+                        // Clip-path wipe
+                        const clipProgress = Math.min(100, enterT * 130);
+                        if (isEven) {
+                            panel.style.clipPath = `polygon(0 0, ${clipProgress}% 0, ${clipProgress}% 100%, 0 100%)`;
+                        } else {
+                            panel.style.clipPath = `polygon(${100 - clipProgress}% 0, 100% 0, 100% 100%, ${100 - clipProgress}% 100%)`;
+                        }
+                    } else if (rect.bottom < vh) {
+                        // Panel is exiting UPWARDS out of view
+                        panel.style.transform = `scaleX(${1 + exitProgress * 0.1}) scaleY(${1 - exitProgress * 0.05})`;
+                        panel.style.filter = `grayscale(${exitProgress * 100}%) contrast(${100 + exitProgress * 40}%) sepia(${exitProgress * 20}%)`;
+                        panel.style.opacity = 1 - exitProgress * 0.2;
+                        panel.style.clipPath = 'none';
+                    } else {
+                        // Fully resting in view
+                        panel.style.transform = 'translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)';
+                        panel.style.opacity = 1;
+                        panel.style.clipPath = 'none';
+                        panel.style.filter = 'none';
+                    }
+
+                    // --- Internal Parallax ---
+                    // Example: Shift headers slightly based on enterT to create depth
+                    const innerContent = panel.querySelector('.contact-headline, .projects-header-grid, .about-me-card');
+                    if (innerContent && progress > 0 && progress < 1) {
+                        const enterT = 1 - progress;
+                        innerContent.style.transform = `translateY(${enterT * 50}px)`;
+                    } else if (innerContent) {
+                        innerContent.style.transform = `translateY(0)`;
+                    }
+                }
+            });
+
+            // ── Gutter animations (action lines & SFX burst with momentum) ──
+            gutters.forEach(gutter => {
+                const rect = gutter.getBoundingClientRect();
+                const gutterCenter = rect.top + rect.height / 2;
+                
+                // Target proximity
+                const distFromCenter = Math.abs(gutterCenter - vh / 2);
+                const targetProximity = Math.max(0, 1 - distFromCenter / (vh * 0.6));
+
+                // Lerp proximity for smooth explosions
+                if (!gutter.scrollData) gutter.scrollData = { proximity: 0 };
+                gutter.scrollData.proximity += (targetProximity - gutter.scrollData.proximity) * 0.1;
+                const proximity = gutter.scrollData.proximity;
+
+                const sfx = gutter.querySelector('.gutter-sfx');
+                const lines = gutter.querySelector('.action-lines-group');
+
+                if (proximity > 0.05) {
+                    gutter.classList.add('active');
+                    if (sfx) {
+                        // Add horizontal fly-by motion to SFX
+                        const flyX = (1 - proximity) * (gutterCenter > vh/2 ? 100 : -100); 
+                        sfx.style.transform = `translateX(${flyX}px) scale(${0.5 + proximity * 0.8}) rotate(${-5 + proximity * 5}deg)`;
+                        sfx.style.opacity = proximity;
+                    }
+                    if (lines) {
+                        lines.style.transform = `scale(${0.8 + proximity * 0.3})`;
+                        lines.style.opacity = proximity * 0.8;
+                    }
+                } else {
+                    gutter.classList.remove('active');
+                    if (sfx) { sfx.style.opacity = 0; sfx.style.transform = `translateX(100px) scale(0.5)`; }
+                    if (lines) { lines.style.opacity = 0; }
+                }
+            });
+
+            // ── Panel indicator dots ──
+            let activePanel = 0;
+            panels.forEach((panel, i) => {
+                const rect = panel.getBoundingClientRect();
+                if (rect.top < vh * 0.5 && rect.bottom > vh * 0.3) {
+                    activePanel = i;
+                }
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === activePanel);
+            });
+
+            requestAnimationFrame(animatePanels);
+        }
+        animatePanels();
+
+
+
+        // ── 3. Click panel dots to scroll ──
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const panelIndex = parseInt(dot.dataset.panel);
+                if (panels[panelIndex]) {
+                    panels[panelIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ── 4. Contact Section Spotlight Effect ──
+        const contactSection = document.getElementById('panel-contact');
+        if (contactSection) {
+            contactSection.addEventListener('mousemove', e => {
+                const rect = contactSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                contactSection.style.setProperty('--mouse-x', `${x}px`);
+                contactSection.style.setProperty('--mouse-y', `${y}px`);
+            });
+        }
+    });
+    </script>
+</body>
+</html>

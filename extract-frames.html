@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Extractor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        h1 { margin-bottom: 1rem; font-size: 1.5rem; }
+        #status {
+            margin: 1rem 0;
+            padding: 1rem 2rem;
+            background: #1a1a1a;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 300px;
+            text-align: center;
+        }
+        #progress-bar {
+            width: 400px;
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        #progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #e23636, #ffd700);
+            transition: width 0.1s;
+        }
+        button {
+            padding: 0.8rem 2rem;
+            background: #e23636;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        button:hover { background: #ff4d4d; }
+        button:disabled { background: #555; cursor: not-allowed; }
+        video { display: none; }
+        canvas { display: none; }
+        #download-section {
+            display: none;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        #download-section a {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #0033cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        #frame-count { color: #ffd700; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🎬 Frame Extractor (24 FPS)</h1>
+    <div id="status">Ready. Click "Extract Frames" to begin.</div>
+    <div id="progress-bar"><div id="progress-fill"></div></div>
+    <button id="extract-btn" onclick="startExtraction()">Extract Frames</button>
+
+    <video id="video" src="kling_20260715_VIDEO_STYLE__Ani_295_0.mp4" muted preload="auto"></video>
+    <canvas id="canvas"></canvas>
+
+    <div id="download-section">
+        <p>Extraction complete! <span id="frame-count">0</span> frames extracted.</p>
+        <p>Downloading as a ZIP...</p>
+    </div>
+
+    <!-- JSZip for bundling frames -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        async function startExtraction() {
+            const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const statusEl = document.getElementById('status');
+            const progressFill = document.getElementById('progress-fill');
+            const btn = document.getElementById('extract-btn');
+
+            btn.disabled = true;
+            statusEl.textContent = 'Loading video...';
+
+            await new Promise((resolve) => {
+                if (video.readyState >= 2) return resolve();
+                video.addEventListener('loadeddata', resolve, { once: true });
+                video.load();
+            });
+
+            const FPS = 24;
+            const duration = video.duration;
+            const totalFrames = Math.floor(duration * FPS);
+            const frameInterval = 1 / FPS;
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            statusEl.textContent = `Extracting ${totalFrames} frames at ${FPS}fps (${duration.toFixed(2)}s)...`;
+
+            const zip = new JSZip();
+            const framesFolder = zip.folder('frames');
+
+            for (let i = 0; i < totalFrames; i++) {
+                const time = i * frameInterval;
+                video.currentTime = time;
+
+                await new Promise((resolve) => {
+                    video.addEventListener('seeked', resolve, { once: true });
+                });
+
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                // Convert to blob
+                const blob = await new Promise((resolve) => {
+                    canvas.toBlob(resolve, 'image/jpeg', 0.92);
+                });
+
+                const frameNum = String(i + 1).padStart(4, '0');
+                framesFolder.file(`frame_${frameNum}.jpg`, blob);
+
+                // Update progress
+                const pct = ((i + 1) / totalFrames * 100).toFixed(1);
+                progressFill.style.width = pct + '%';
+                statusEl.textContent = `Extracting frame ${i + 1} / ${totalFrames} (${pct}%)`;
+            }
+
+            statusEl.textContent = `Generating ZIP file with ${totalFrames} frames...`;
+
+            const zipBlob = await zip.generateAsync({ type: 'blob' }, (metadata) => {
+                progressFill.style.width = metadata.percent.toFixed(0) + '%';
+            });
+
+            // Auto-download
+            const url = URL.createObjectURL(zipBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'frames.zip';
+            a.click();
+
+            document.getElementById('frame-count').textContent = totalFrames;
+            document.getElementById('download-section').style.display = 'block';
+            statusEl.textContent = `Done! ${totalFrames} frames extracted and downloaded as ZIP.`;
+            progressFill.style.width = '100%';
+            btn.disabled = false;
+            btn.textContent = 'Extract Again';
+        }
+    </script>
+</body>
+</html>
