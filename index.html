@@ -3,118 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yassine - Spider-Man Theme</title>
-    <link rel="stylesheet" href="styles.css?v=5">
-    <!-- Google Fonts for a comic book style -->
+    <title>Yassine — Spider-Man Portfolio</title>
+    <meta name="description" content="Yassine — Website Developer & Designer. Spider-Man themed comic book portfolio.">
+    <link rel="stylesheet" href="styles.css?v=6">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ═══════════════ COMIC PANEL INDICATOR ═══════════════ -->
-    <div class="comic-panel-indicator" id="panel-indicator">
-        <span class="panel-dot active" data-panel="0"></span>
-        <span class="panel-dot" data-panel="1"></span>
-        <span class="panel-dot" data-panel="2"></span>
-    </div>
+    <!-- ═══════════════ PANEL INDICATOR ═══════════════ -->
+    <nav class="comic-panel-indicator" id="panel-indicator" aria-label="Section navigation">
+        <span class="panel-dot active" data-panel="0" role="button" tabindex="0" aria-label="Hero"></span>
+        <span class="panel-dot" data-panel="1" role="button" tabindex="0" aria-label="About"></span>
+        <span class="panel-dot" data-panel="2" role="button" tabindex="0" aria-label="Projects"></span>
+        <span class="panel-dot" data-panel="3" role="button" tabindex="0" aria-label="Contact"></span>
+    </nav>
 
     <!-- ═══════════════ PANEL 1 — HERO ═══════════════ -->
     <div class="comic-panel" id="panel-hero">
-        <div class="panel-border">
+        <div class="panel-border" aria-hidden="true">
             <div class="panel-corner panel-corner-tl"></div>
             <div class="panel-corner panel-corner-tr"></div>
             <div class="panel-corner panel-corner-bl"></div>
             <div class="panel-corner panel-corner-br"></div>
         </div>
         <section class="hero-section">
-            <!-- Mouse reveal background effect -->
+            <!--
+                SPOTLIGHT: Pure CSS radial-gradient mask driven by CSS custom
+                properties updated on mousemove. Zero canvas.toDataURL() cost.
+                The GPU compositor handles masking — main thread stays free.
+            -->
             <div class="hero-wrap">
                 <div class="hero-base-img" style="background-image:url('Character_face_textured_backgrou…_2K_202607132149.jpeg');"></div>
-                <canvas id="reveal-canvas"></canvas>
                 <div class="hero-reveal-img" id="reveal-img" style="background-image:url('Change_character_to_cartoon_mask_202607132333.jpeg');"></div>
             </div>
 
-            <!-- Content in the left corner -->
             <div class="hero-content">
                 <div class="left-corner-container">
                     <h1 class="name-title">YASSINE</h1>
                     <h2 class="subtitle-info">Website Developer &amp; Designer</h2>
-                    <button class="spidey-btn">
+                    <button class="spidey-btn" onclick="document.getElementById('panel-about').scrollIntoView({behavior:'smooth'})">
                         <span class="btn-text">Sling Web to Explore</span>
-                        <span class="btn-shadow"></span>
+                        <span class="btn-shadow" aria-hidden="true"></span>
                     </button>
                 </div>
             </div>
 
-            <!-- Panel number caption -->
-            <div class="panel-caption">PANEL 01</div>
+            <div class="panel-caption" aria-hidden="true">PANEL 01</div>
         </section>
     </div>
 
-    <!-- ═══════════════ COMIC GUTTER (Hero → About) ═══════════════ -->
-    <div class="comic-gutter" id="gutter-1">
+    <!-- ═══════════════ GUTTER 1 ═══════════════ -->
+    <div class="comic-gutter" aria-hidden="true">
         <div class="gutter-inner">
-            <!-- Action lines SVG burst -->
             <svg class="action-lines" viewBox="0 0 1200 200" preserveAspectRatio="none">
                 <g class="action-lines-group">
-                    <line x1="600" y1="100" x2="0"    y2="0"   stroke="#e23636" stroke-width="2" opacity="0.5"/>
-                    <line x1="600" y1="100" x2="150"  y2="0"   stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="600" y1="100" x2="300"  y2="0"   stroke="#0033cc" stroke-width="1" opacity="0.3"/>
-                    <line x1="600" y1="100" x2="450"  y2="0"   stroke="#e23636" stroke-width="2" opacity="0.5"/>
-                    <line x1="600" y1="100" x2="750"  y2="0"   stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="600" y1="100" x2="900"  y2="0"   stroke="#e23636" stroke-width="1" opacity="0.3"/>
-                    <line x1="600" y1="100" x2="1050" y2="0"   stroke="#0033cc" stroke-width="2" opacity="0.5"/>
-                    <line x1="600" y1="100" x2="1200" y2="0"   stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="0"    y2="0"   stroke="#e23636" stroke-width="2"   opacity="0.5"/>
+                    <line x1="600" y1="100" x2="200"  y2="0"   stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="400"  y2="0"   stroke="#0033cc" stroke-width="1"   opacity="0.3"/>
+                    <line x1="600" y1="100" x2="600"  y2="0"   stroke="#e23636" stroke-width="2"   opacity="0.5"/>
+                    <line x1="600" y1="100" x2="800"  y2="0"   stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="1000" y2="0"   stroke="#e23636" stroke-width="1"   opacity="0.3"/>
+                    <line x1="600" y1="100" x2="1200" y2="0"   stroke="#0033cc" stroke-width="2"   opacity="0.5"/>
                     <line x1="600" y1="100" x2="0"    y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="600" y1="100" x2="150"  y2="200" stroke="#e23636" stroke-width="1" opacity="0.3"/>
-                    <line x1="600" y1="100" x2="300"  y2="200" stroke="#0033cc" stroke-width="2" opacity="0.5"/>
-                    <line x1="600" y1="100" x2="450"  y2="200" stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="600" y1="100" x2="750"  y2="200" stroke="#0033cc" stroke-width="1" opacity="0.3"/>
-                    <line x1="600" y1="100" x2="900"  y2="200" stroke="#e23636" stroke-width="2" opacity="0.5"/>
-                    <line x1="600" y1="100" x2="1050" y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="600" y1="100" x2="1200" y2="200" stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="600" y1="100" x2="300"  y2="200" stroke="#e23636" stroke-width="1"   opacity="0.3"/>
+                    <line x1="600" y1="100" x2="600"  y2="200" stroke="#0033cc" stroke-width="2"   opacity="0.5"/>
+                    <line x1="600" y1="100" x2="900"  y2="200" stroke="#e23636" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="1200" y2="200" stroke="#0033cc" stroke-width="2"   opacity="0.5"/>
                 </g>
             </svg>
             <span class="gutter-sfx">THWIP!</span>
         </div>
     </div>
 
-    <!-- ═══════════════ PANEL 2 — ABOUT ME ═══════════════ -->
+    <!-- ═══════════════ PANEL 2 — ABOUT ═══════════════ -->
     <div class="comic-panel" id="panel-about">
-        <div class="panel-border">
+        <div class="panel-border" aria-hidden="true">
             <div class="panel-corner panel-corner-tl"></div>
             <div class="panel-corner panel-corner-tr"></div>
             <div class="panel-corner panel-corner-bl"></div>
             <div class="panel-corner panel-corner-br"></div>
         </div>
-        <section class="about-me-section" id="about-me">
-            <video class="about-me-video" id="about-video" muted playsinline preload="auto">
+        <section class="about-me-section">
+            <video class="about-me-video" id="about-video" muted playsinline preload="metadata">
                 <source src="lmosta3mal 2.mp4" type="video/mp4">
             </video>
-
             <div class="about-me-card">
                 <h2>About Me</h2>
                 <p>I am a passionate Website Developer &amp; Designer specializing in creating immersive, high-performance web experiences. Combining cutting-edge technology with bold design aesthetics, I build digital worlds that captivate users.</p>
                 <p class="highlight">Ready to leap into the next dimension of web design?</p>
             </div>
-
-            <div class="panel-caption">PANEL 02</div>
+            <div class="panel-caption" aria-hidden="true">PANEL 02</div>
         </section>
     </div>
 
-    <!-- ═══════════════ COMIC GUTTER (About → Projects) ═══════════════ -->
-    <div class="comic-gutter" id="gutter-2">
+    <!-- ═══════════════ GUTTER 2 ═══════════════ -->
+    <div class="comic-gutter" aria-hidden="true">
         <div class="gutter-inner">
             <svg class="action-lines" viewBox="0 0 1200 200" preserveAspectRatio="none">
                 <g class="action-lines-group">
-                    <line x1="0"   y1="100" x2="1200" y2="0"   stroke="#e23636" stroke-width="2" opacity="0.5"/>
+                    <line x1="0"   y1="100" x2="1200" y2="0"   stroke="#e23636" stroke-width="2"   opacity="0.5"/>
                     <line x1="0"   y1="100" x2="1200" y2="50"  stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="0"   y1="100" x2="1200" y2="100" stroke="#e23636" stroke-width="1" opacity="0.3"/>
+                    <line x1="0"   y1="100" x2="1200" y2="100" stroke="#e23636" stroke-width="1"   opacity="0.3"/>
                     <line x1="0"   y1="100" x2="1200" y2="150" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="0"   y1="100" x2="1200" y2="200" stroke="#e23636" stroke-width="2" opacity="0.5"/>
-                    <line x1="200" y1="0"   x2="1000" y2="200" stroke="#0033cc" stroke-width="1" opacity="0.2"/>
+                    <line x1="0"   y1="100" x2="1200" y2="200" stroke="#e23636" stroke-width="2"   opacity="0.5"/>
+                    <line x1="200" y1="0"   x2="1000" y2="200" stroke="#0033cc" stroke-width="1"   opacity="0.2"/>
                     <line x1="400" y1="0"   x2="800"  y2="200" stroke="#e23636" stroke-width="1.5" opacity="0.3"/>
-                    <line x1="600" y1="0"   x2="600"  y2="200" stroke="#0033cc" stroke-width="2" opacity="0.4"/>
-                    <line x1="800" y1="0"   x2="400"  y2="200" stroke="#e23636" stroke-width="1" opacity="0.2"/>
+                    <line x1="600" y1="0"   x2="600"  y2="200" stroke="#0033cc" stroke-width="2"   opacity="0.4"/>
+                    <line x1="800" y1="0"   x2="400"  y2="200" stroke="#e23636" stroke-width="1"   opacity="0.2"/>
                     <line x1="1000" y1="0"  x2="200"  y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.3"/>
                 </g>
             </svg>
@@ -124,512 +119,453 @@
 
     <!-- ═══════════════ PANEL 3 — PROJECTS ═══════════════ -->
     <div class="comic-panel" id="panel-projects">
-        <div class="panel-border">
+        <div class="panel-border" aria-hidden="true">
             <div class="panel-corner panel-corner-tl"></div>
             <div class="panel-corner panel-corner-tr"></div>
             <div class="panel-corner panel-corner-bl"></div>
             <div class="panel-corner panel-corner-br"></div>
         </div>
-        <div class="comic-grid-wrapper" id="projects-wrapper">
+        <div class="comic-grid-wrapper">
             <div class="projects-header-grid">
                 <h2>THE PROJECT FILES</h2>
                 <p>HOVER TO REVEAL</p>
             </div>
             <div class="comic-page-grid">
-                <!-- Project 1 (Tall) -->
                 <div class="grid-panel panel-1">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://riham-construction.netlify.app" loading="lazy" scrolling="no" title="Riham Construction"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>RIHAM CONSTRUCTION</h3>
-                            <a href="https://riham-construction.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://riham-construction.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">THWIP!</div>
+                        <div class="sfx-popup" aria-hidden="true">THWIP!</div>
                     </div>
                 </div>
-                <!-- Project 2 (Square) -->
                 <div class="grid-panel panel-2">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://3alem-o-t3alem.netlify.app/" loading="lazy" scrolling="no" title="3alem o T3alem"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>3ALEM O T3ALEM</h3>
-                            <a href="https://3alem-o-t3alem.netlify.app/" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://3alem-o-t3alem.netlify.app/" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">BAM!</div>
+                        <div class="sfx-popup" aria-hidden="true">BAM!</div>
                     </div>
                 </div>
-                <!-- Project 3 (Square) -->
                 <div class="grid-panel panel-3">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://ecomaroc-project.netlify.app/" loading="lazy" scrolling="no" title="EcoMaroc"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>ECOMAROC</h3>
-                            <a href="https://ecomaroc-project.netlify.app/" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://ecomaroc-project.netlify.app/" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">POW!</div>
+                        <div class="sfx-popup" aria-hidden="true">POW!</div>
                     </div>
                 </div>
-                <!-- Project 4 (Wide) -->
                 <div class="grid-panel panel-4">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://prismaoa.netlify.app" loading="lazy" scrolling="no" title="Prisma OA"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>PRISMA OA</h3>
-                            <a href="https://prismaoa.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://prismaoa.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">SNIKT!</div>
+                        <div class="sfx-popup" aria-hidden="true">SNIK!</div>
                     </div>
                 </div>
-                <!-- Project 5 (Square) -->
                 <div class="grid-panel panel-5">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://prmpti.netlify.app" loading="lazy" scrolling="no" title="Prmpti"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>PRMPTI</h3>
-                            <a href="https://prmpti.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://prmpti.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">WHAM!</div>
+                        <div class="sfx-popup" aria-hidden="true">WHAM!</div>
                     </div>
                 </div>
-                <!-- Project 6 (Tall) -->
                 <div class="grid-panel panel-6">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://studioslux.netlify.app" loading="lazy" scrolling="no" title="Studios Lux"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>STUDIOS LUX</h3>
-                            <a href="https://studioslux.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://studioslux.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">ZAP!</div>
+                        <div class="sfx-popup" aria-hidden="true">ZAP!</div>
                     </div>
                 </div>
-                <!-- Project 7 (Wide) -->
                 <div class="grid-panel panel-7">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://dashbordme.netlify.app" loading="lazy" scrolling="no" title="Dashbord Me"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>DASHBORD ME</h3>
-                            <a href="https://dashbordme.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://dashbordme.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">KRACK!</div>
+                        <div class="sfx-popup" aria-hidden="true">KRACK!</div>
                     </div>
                 </div>
-                <!-- Project 8 (Square) -->
                 <div class="grid-panel panel-8">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://waletusd.netlify.app" loading="lazy" scrolling="no" title="Walet USD"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>WALET USD</h3>
-                            <a href="https://waletusd.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://waletusd.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">BOOM!</div>
+                        <div class="sfx-popup" aria-hidden="true">BOOM!</div>
                     </div>
                 </div>
-                <!-- Project 9 (Wide) -->
                 <div class="grid-panel panel-9">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://adhdpre.netlify.app" loading="lazy" scrolling="no" title="ADHD Pre"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>ADHD PRE</h3>
-                            <a href="https://adhdpre.netlify.app" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://adhdpre.netlify.app" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">SMASH!</div>
+                        <div class="sfx-popup" aria-hidden="true">SMASH!</div>
                     </div>
                 </div>
-                <!-- Project 10 -->
                 <div class="grid-panel panel-10">
                     <div class="panel-inner">
                         <div class="iframe-wrapper">
                             <iframe src="https://morocowonders.vercel.app/" loading="lazy" scrolling="no" title="Morocco Wonders"></iframe>
                         </div>
-                        <div class="comic-halftone-texture"></div>
+                        <div class="comic-halftone-texture" aria-hidden="true"></div>
                         <div class="panel-content">
                             <h3>MOROCCO WONDERS</h3>
-                            <a href="https://morocowonders.vercel.app/" target="_blank" class="grid-btn">VISIT SITE</a>
+                            <a href="https://morocowonders.vercel.app/" target="_blank" rel="noopener" class="grid-btn">VISIT SITE</a>
                         </div>
-                        <div class="sfx-popup">THWIP!</div>
+                        <div class="sfx-popup" aria-hidden="true">THWIP!</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ═══════════════ GUTTER 3 ═══════════════ -->
+    <div class="comic-gutter" aria-hidden="true">
+        <div class="gutter-inner">
+            <svg class="action-lines" viewBox="0 0 1200 200" preserveAspectRatio="none">
+                <g class="action-lines-group">
+                    <line x1="600" y1="100" x2="0"    y2="0"   stroke="#e23636" stroke-width="2.5" opacity="0.6"/>
+                    <line x1="600" y1="100" x2="200"  y2="0"   stroke="#ffd700" stroke-width="2"   opacity="0.5"/>
+                    <line x1="600" y1="100" x2="400"  y2="0"   stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="600"  y2="0"   stroke="#e23636" stroke-width="3"   opacity="0.7"/>
+                    <line x1="600" y1="100" x2="800"  y2="0"   stroke="#ffd700" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="1000" y2="0"   stroke="#0033cc" stroke-width="2"   opacity="0.5"/>
+                    <line x1="600" y1="100" x2="1200" y2="0"   stroke="#e23636" stroke-width="2.5" opacity="0.6"/>
+                    <line x1="600" y1="100" x2="0"    y2="200" stroke="#0033cc" stroke-width="2"   opacity="0.5"/>
+                    <line x1="600" y1="100" x2="300"  y2="200" stroke="#ffd700" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="600"  y2="200" stroke="#e23636" stroke-width="2.5" opacity="0.6"/>
+                    <line x1="600" y1="100" x2="900"  y2="200" stroke="#0033cc" stroke-width="1.5" opacity="0.4"/>
+                    <line x1="600" y1="100" x2="1200" y2="200" stroke="#ffd700" stroke-width="2"   opacity="0.5"/>
+                </g>
+            </svg>
+            <span class="gutter-sfx">ZZZAP!</span>
+        </div>
+    </div>
 
-    <!-- ═══════════════════════════════════════════════════ -->
-    <!-- SCRIPTS -->
-    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- ═══════════════ PANEL 4 — CONTACT ═══════════════ -->
+    <div class="comic-panel" id="panel-contact">
+        <div class="panel-border" aria-hidden="true">
+            <div class="panel-corner panel-corner-tl"></div>
+            <div class="panel-corner panel-corner-tr"></div>
+            <div class="panel-corner panel-corner-bl"></div>
+            <div class="panel-corner panel-corner-br"></div>
+        </div>
 
+        <div class="contact-halftone-bg" aria-hidden="true"></div>
+
+        <svg class="contact-web-svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <g stroke="rgba(226,54,54,0.08)" stroke-width="1" fill="none">
+                <line x1="400" y1="400" x2="400" y2="0"/>
+                <line x1="400" y1="400" x2="693" y2="200"/>
+                <line x1="400" y1="400" x2="693" y2="600"/>
+                <line x1="400" y1="400" x2="400" y2="800"/>
+                <line x1="400" y1="400" x2="107" y2="600"/>
+                <line x1="400" y1="400" x2="107" y2="200"/>
+                <line x1="400" y1="400" x2="800" y2="400"/>
+                <line x1="400" y1="400" x2="0"   y2="400"/>
+                <circle cx="400" cy="400" r="80"/>
+                <circle cx="400" cy="400" r="160"/>
+                <circle cx="400" cy="400" r="240"/>
+                <circle cx="400" cy="400" r="320"/>
+                <circle cx="400" cy="400" r="400"/>
+            </g>
+        </svg>
+
+        <section class="contact-panel-section">
+            <div class="contact-panel-header">
+                <div class="contact-header-badge">PANEL 04</div>
+                <h2 class="contact-panel-title">
+                    <span class="contact-title-line1">CONTACT ME</span>
+                </h2>
+                <p class="contact-panel-sub">Your friendly neighbourhood developer — ready to swing into action!</p>
+            </div>
+
+            <div class="contact-main-grid">
+                <div class="contact-form-panel">
+                    <div class="form-header">
+                        <span class="form-sfx">HIT ME UP!</span>
+                        <div class="form-header-line"></div>
+                    </div>
+                    <form class="spidey-form" id="contact-form" onsubmit="handleContactSubmit(event)" novalidate>
+                        <div class="form-group">
+                            <label for="contact-name">YOUR NAME</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="contact-name" name="name" placeholder="Peter Parker" required autocomplete="name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">YOUR EMAIL</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="contact-email" name="email" placeholder="hero@dailybugle.com" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">SUBJECT</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="contact-subject" name="subject" placeholder="New Web Project" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">YOUR MESSAGE</label>
+                            <div class="input-wrapper">
+                                <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-submit-btn">
+                            <span class="submit-text">SLING MY MESSAGE</span>
+                            <span class="submit-shadow" aria-hidden="true"></span>
+                            <span class="submit-sfx" aria-hidden="true">THWIP!</span>
+                        </button>
+                        <div class="form-success" id="form-success" role="alert" aria-live="polite">
+                            <span class="success-sfx" aria-hidden="true">POW!</span>
+                            <p>Message sent! I'll swing by soon.</p>
+                        </div>
+                    </form>
+
+                    <div class="contact-socials">
+                        <a href="mailto:chaibiyassine0801@gmail.com" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span>chaibiyassine0801@gmail.com</span>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="panel-caption" aria-hidden="true">PANEL 04</div>
+    </div>
+
+    <!-- ═══════════════ SCRIPTS ═══════════════ -->
     <script>
-    /* ── Hero Spotlight Reveal ── */
-    (function() {
-      const SPOTLIGHT_R = 260;
-      const canvas = document.getElementById('reveal-canvas');
-      const imgLayer = document.getElementById('reveal-img');
-      const ctx = canvas.getContext('2d');
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    (function () {
+        'use strict';
 
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
+        /* ─────────────────────────────────────────────────────────
+           1. HERO SPOTLIGHT  —  CSS custom-property mask
+           No canvas.toDataURL(). The browser composites the mask on
+           the GPU; the main thread only writes two numbers per frame.
+        ───────────────────────────────────────────────────────── */
+        const revealImg  = document.getElementById('reveal-img');
+        const RADIUS     = 260;
 
-      const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-      const smooth = { x: canvas.width / 2, y: canvas.height / 2 };
-      let lastMouseMoveTime = 0;
-      const MOUSE_TIMEOUT = 2000;
+        // smooth mouse position (lerp on RAF, but only for smooth.x/y update)
+        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+        let sx = mx, sy = my;
+        let autoTime   = 0;
+        let lastMouse  = 0;
+        const IDLE_MS  = 2000;
 
-      window.addEventListener('mousemove', function(e) {
-        mouse.x = e.clientX; mouse.y = e.clientY;
-        lastMouseMoveTime = Date.now();
-      });
-      window.addEventListener('mouseleave', function() { lastMouseMoveTime = 0; });
-
-      function loop() {
-        const now = Date.now();
-        let targetX = mouse.x, targetY = mouse.y;
-        if (prefersReducedMotion.matches) {
-            targetX = canvas.width / 2; targetY = canvas.height / 2;
-        } else {
-            const timeSinceMouse = now - lastMouseMoveTime;
-            if (timeSinceMouse > MOUSE_TIMEOUT) {
-                const t = now * 0.001;
-                const ampX = canvas.width * 0.35, ampY = canvas.height * 0.35;
-                const cx = canvas.width / 2, cy = canvas.height / 2;
-                targetX = cx + Math.sin(t * 0.5) * ampX;
-                targetY = cy + Math.cos(t * 0.3) * ampY;
-                mouse.x = targetX; mouse.y = targetY;
+        function updateSpotlight(ts) {
+            const idle = ts - lastMouse > IDLE_MS;
+            if (idle) {
+                const t = ts * 0.001;
+                mx = window.innerWidth  * 0.5 + Math.sin(t * 0.5) * window.innerWidth  * 0.35;
+                my = window.innerHeight * 0.5 + Math.cos(t * 0.3) * window.innerHeight * 0.35;
             }
+            // lerp — only two additions & multiplications
+            sx += (mx - sx) * 0.06;
+            sy += (my - sy) * 0.06;
+
+            // GPU-composited radial-gradient mask — zero layout impact
+            revealImg.style.webkitMaskImage =
+            revealImg.style.maskImage =
+                `radial-gradient(circle ${RADIUS}px at ${sx}px ${sy}px,
+                    #fff 0%, #fff 40%, rgba(255,255,255,.75) 60%,
+                    rgba(255,255,255,.4) 75%, rgba(255,255,255,.12) 88%, transparent 100%)`;
+
+            requestAnimationFrame(updateSpotlight);
         }
-        smooth.x += (targetX - smooth.x) * 0.05;
-        smooth.y += (targetY - smooth.y) * 0.05;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var grad = ctx.createRadialGradient(smooth.x, smooth.y, 0, smooth.x, smooth.y, SPOTLIGHT_R);
-        grad.addColorStop(0, 'rgba(255,255,255,1)');
-        grad.addColorStop(0.4, 'rgba(255,255,255,1)');
-        grad.addColorStop(0.6, 'rgba(255,255,255,0.75)');
-        grad.addColorStop(0.75, 'rgba(255,255,255,0.4)');
-        grad.addColorStop(0.88, 'rgba(255,255,255,0.12)');
-        grad.addColorStop(1, 'rgba(255,255,255,0)');
-        ctx.beginPath();
-        ctx.arc(smooth.x, smooth.y, SPOTLIGHT_R, 0, Math.PI * 2);
-        ctx.fillStyle = grad;
-        ctx.fill();
-        var dataUrl = canvas.toDataURL();
-        imgLayer.style.webkitMaskImage = 'url(' + dataUrl + ')';
-        imgLayer.style.maskImage = 'url(' + dataUrl + ')';
-        imgLayer.style.webkitMaskSize = '100% 100%';
-        imgLayer.style.maskSize = '100% 100%';
-        requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-    })();
-    </script>
 
-    <script>
-    /* ── About Me Video Ping-Pong ── */
-    (function() {
-      const aboutVideo = document.getElementById('about-video');
-      let isReversing = false;
-      let lastTime = performance.now();
+        window.addEventListener('mousemove', function (e) {
+            mx = e.clientX; my = e.clientY;
+            lastMouse = performance.now();
+        }, { passive: true });
 
-      function pingPong(now) {
-          if (!aboutVideo.duration) { lastTime = now; requestAnimationFrame(pingPong); return; }
-          const delta = (now - lastTime) / 1000;
-          lastTime = now;
-          if (!isReversing) {
-              if (aboutVideo.paused) aboutVideo.play().catch(e => {});
-              if (aboutVideo.currentTime >= aboutVideo.duration - 0.05) { isReversing = true; aboutVideo.pause(); }
-          } else {
-              if (!aboutVideo.paused) aboutVideo.pause();
-              aboutVideo.currentTime = Math.max(0, aboutVideo.currentTime - delta);
-              if (aboutVideo.currentTime <= 0.05) { isReversing = false; }
-          }
-          requestAnimationFrame(pingPong);
-      }
-      requestAnimationFrame(pingPong);
-    })();
-    </script>
+        requestAnimationFrame(updateSpotlight);
 
-    <script>
-    /* ══════════════════════════════════════════════════
-       COMIC BOOK SCROLL TRANSITIONS
-       ══════════════════════════════════════════════════ */
-    document.addEventListener('DOMContentLoaded', () => {
 
-        // ── 1. Panel scroll reveal animations ──
-        const panels = document.querySelectorAll('.comic-panel');
-        const gutters = document.querySelectorAll('.comic-gutter');
-        const dots = document.querySelectorAll('.panel-dot');
+        /* ─────────────────────────────────────────────────────────
+           2. ABOUT VIDEO PING-PONG
+           Uses IntersectionObserver so the RAF loop only runs while
+           the section is visible — zero cost when scrolled past.
+        ───────────────────────────────────────────────────────── */
+        const video   = document.getElementById('about-video');
+        let pingRafId = null;
+        let isReversing = false;
+        let prevTime    = 0;
 
-        function animatePanels() {
-            const vh = window.innerHeight;
+        function pingPong(ts) {
+            if (!video.duration) { prevTime = ts; pingRafId = requestAnimationFrame(pingPong); return; }
+            const dt = Math.min((ts - prevTime) / 1000, 0.1); // cap delta to avoid jumps
+            prevTime = ts;
 
-            panels.forEach((panel, i) => {
-                const rect = panel.getBoundingClientRect();
-                
-                // Target progress based on exact scroll position
-                const targetProgress = rect.top / vh; 
-                const targetExitProgress = Math.max(0, Math.min(1, 1 - (rect.bottom / vh)));
-
-                // Initialize scroll data for physics (Lerp) if not exists
-                if (!panel.scrollData) {
-                    panel.scrollData = { progress: targetProgress, exitProgress: targetExitProgress };
-                }
-
-                // Apply Lerp (Linear Interpolation) for buttery smooth momentum
-                panel.scrollData.progress += (targetProgress - panel.scrollData.progress) * 0.08;
-                panel.scrollData.exitProgress += (targetExitProgress - panel.scrollData.exitProgress) * 0.08;
-
-                const progress = panel.scrollData.progress;
-                const exitProgress = panel.scrollData.exitProgress;
-
-                // Add 3D perspective to the panel container for true tumbling depth
-                panel.style.perspective = '1500px';
-
-                if (i === 0) {
-                    // Hero panel: peel away, turn black & white, go wide
-                    panel.style.transform = `scaleX(${1 + exitProgress * 0.15}) scaleY(${1 - exitProgress * 0.05}) rotate(${exitProgress * -2}deg)`;
-                    panel.style.filter = `grayscale(${exitProgress * 100}%) contrast(${100 + exitProgress * 50}%)`;
-                    panel.style.opacity = 1 - exitProgress * 0.3;
-                    
-                    // Internal Parallax for Hero
-                    const heroTitle = panel.querySelector('.hero-title');
-                    if (heroTitle) heroTitle.style.transform = `translateY(${exitProgress * 150}px)`;
-
-                } else {
-                    if (progress >= 1) {
-                        // Not in view yet (below screen)
-                        panel.style.opacity = 0;
-                        panel.style.transform = `translateY(120px) rotateX(-20deg) rotateY(${i % 2 === 0 ? 10 : -10}deg) scale(0.85)`;
-                        panel.style.filter = 'none';
-                    } else if (progress > 0 && rect.bottom > vh) {
-                        // Panel is entering from bottom (Tumbling 3D entrance)
-                        const enterT = Math.max(0, Math.min(1, 1 - progress)); // 0=just entering, 1=fully in
-
-                        const isEven = i % 2 === 0;
-                        const rotateZ = (1 - enterT) * (isEven ? 5 : -5);
-                        const rotateX = (1 - enterT) * -20; // Tumble backward
-                        const rotateY = (1 - enterT) * (isEven ? 10 : -10); 
-                        const translateY = (1 - enterT) * 150;
-                        const scale = 0.85 + enterT * 0.15;
-
-                        panel.style.transform = `translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`;
-                        panel.style.opacity = Math.min(1, enterT * 1.5);
-                        panel.style.filter = 'none';
-
-                        // Clip-path wipe
-                        const clipProgress = Math.min(100, enterT * 130);
-                        if (isEven) {
-                            panel.style.clipPath = `polygon(0 0, ${clipProgress}% 0, ${clipProgress}% 100%, 0 100%)`;
-                        } else {
-                            panel.style.clipPath = `polygon(${100 - clipProgress}% 0, 100% 0, 100% 100%, ${100 - clipProgress}% 100%)`;
-                        }
-                    } else if (rect.bottom < vh) {
-                        // Panel is exiting UPWARDS out of view
-                        panel.style.transform = `scaleX(${1 + exitProgress * 0.1}) scaleY(${1 - exitProgress * 0.05})`;
-                        panel.style.filter = `grayscale(${exitProgress * 100}%) contrast(${100 + exitProgress * 40}%) sepia(${exitProgress * 20}%)`;
-                        panel.style.opacity = 1 - exitProgress * 0.2;
-                        panel.style.clipPath = 'none';
-                    } else {
-                        // Fully resting in view
-                        panel.style.transform = 'translateY(0) rotateX(0) rotateY(0) rotateZ(0) scale(1)';
-                        panel.style.opacity = 1;
-                        panel.style.clipPath = 'none';
-                        panel.style.filter = 'none';
-                    }
-
-                    // --- Internal Parallax ---
-                    // Example: Shift headers slightly based on enterT to create depth
-                    const innerContent = panel.querySelector('.contact-headline, .projects-header-grid, .about-me-card');
-                    if (innerContent && progress > 0 && progress < 1) {
-                        const enterT = 1 - progress;
-                        innerContent.style.transform = `translateY(${enterT * 50}px)`;
-                    } else if (innerContent) {
-                        innerContent.style.transform = `translateY(0)`;
-                    }
-                }
-            });
-
-            // ── Gutter animations (action lines & SFX burst with momentum) ──
-            gutters.forEach(gutter => {
-                const rect = gutter.getBoundingClientRect();
-                const gutterCenter = rect.top + rect.height / 2;
-                
-                // Target proximity
-                const distFromCenter = Math.abs(gutterCenter - vh / 2);
-                const targetProximity = Math.max(0, 1 - distFromCenter / (vh * 0.6));
-
-                // Lerp proximity for smooth explosions
-                if (!gutter.scrollData) gutter.scrollData = { proximity: 0 };
-                gutter.scrollData.proximity += (targetProximity - gutter.scrollData.proximity) * 0.1;
-                const proximity = gutter.scrollData.proximity;
-
-                const sfx = gutter.querySelector('.gutter-sfx');
-                const lines = gutter.querySelector('.action-lines-group');
-
-                if (proximity > 0.05) {
-                    gutter.classList.add('active');
-                    if (sfx) {
-                        // Add horizontal fly-by motion to SFX
-                        const flyX = (1 - proximity) * (gutterCenter > vh/2 ? 100 : -100); 
-                        sfx.style.transform = `translateX(${flyX}px) scale(${0.5 + proximity * 0.8}) rotate(${-5 + proximity * 5}deg)`;
-                        sfx.style.opacity = proximity;
-                    }
-                    if (lines) {
-                        lines.style.transform = `scale(${0.8 + proximity * 0.3})`;
-                        lines.style.opacity = proximity * 0.8;
-                    }
-                } else {
-                    gutter.classList.remove('active');
-                    if (sfx) { sfx.style.opacity = 0; sfx.style.transform = `translateX(100px) scale(0.5)`; }
-                    if (lines) { lines.style.opacity = 0; }
-                }
-            });
-
-            // ── Panel indicator dots ──
-            let activePanel = 0;
-            panels.forEach((panel, i) => {
-                const rect = panel.getBoundingClientRect();
-                if (rect.top < vh * 0.5 && rect.bottom > vh * 0.3) {
-                    activePanel = i;
-                }
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === activePanel);
-            });
-
-            requestAnimationFrame(animatePanels);
+            if (!isReversing) {
+                if (video.paused) video.play().catch(() => {});
+                if (video.currentTime >= video.duration - 0.05) { isReversing = true; video.pause(); }
+            } else {
+                if (!video.paused) video.pause();
+                video.currentTime = Math.max(0, video.currentTime - dt);
+                if (video.currentTime <= 0.05) isReversing = false;
+            }
+            pingRafId = requestAnimationFrame(pingPong);
         }
-        animatePanels();
+
+        const videoObserver = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                prevTime = performance.now();
+                pingRafId = requestAnimationFrame(pingPong);
+            } else {
+                if (pingRafId) { cancelAnimationFrame(pingRafId); pingRafId = null; }
+                video.pause();
+            }
+        }, { threshold: 0.1 });
+
+        videoObserver.observe(document.getElementById('panel-about'));
 
 
+        /* ─────────────────────────────────────────────────────────
+           3. SCROLL ANIMATIONS
+           Uses a passive scroll listener + IntersectionObserver.
+           No perpetual RAF loop. No getBoundingClientRect() on every
+           panel every frame. Panel enter/exit classes set once per
+           threshold crossing; CSS transitions do the rest on the GPU.
+        ───────────────────────────────────────────────────────── */
+        const panels  = Array.from(document.querySelectorAll('.comic-panel'));
+        const gutters = Array.from(document.querySelectorAll('.comic-gutter'));
+        const dots    = Array.from(document.querySelectorAll('.panel-dot'));
 
-        // ── 3. Click panel dots to scroll ──
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const panelIndex = parseInt(dot.dataset.panel);
-                if (panels[panelIndex]) {
-                    panels[panelIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        // — Panel entrance (CSS class-based — no inline style loop) —
+        const panelObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                entry.target.classList.toggle('panel-in-view', entry.isIntersecting);
+            });
+        }, { threshold: [0, 0.15, 0.5] });
+
+        panels.forEach(function (p) { panelObserver.observe(p); });
+
+        // — Gutter SFX: activate when gutter is centred in viewport —
+        const gutterObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                entry.target.classList.toggle('active', entry.isIntersecting);
+            });
+        }, { threshold: 0.5 });
+
+        gutters.forEach(function (g) { gutterObserver.observe(g); });
+
+        // — Panel indicator dots: update on scroll (passive, throttled) —
+        let scrollTicking = false;
+
+        function updateDots() {
+            const mid = window.innerHeight * 0.5;
+            let active = 0;
+            // read all rects in one batch before any writes
+            const rects = panels.map(function (p) { return p.getBoundingClientRect(); });
+            rects.forEach(function (r, i) {
+                if (r.top < mid && r.bottom > mid * 0.5) active = i;
+            });
+            dots.forEach(function (d, i) { d.classList.toggle('active', i === active); });
+            scrollTicking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!scrollTicking) { requestAnimationFrame(updateDots); scrollTicking = true; }
+        }, { passive: true });
+
+        updateDots(); // initial call
+
+        // — Dot click navigation —
+        dots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+                const idx = parseInt(dot.dataset.panel, 10);
+                if (panels[idx]) panels[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            dot.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') dot.click();
             });
         });
 
-        // ── 4. Contact Section Canvas Spotlight Reveal ──
-        (function() {
-            const SPOTLIGHT_R = window.innerWidth < 768 ? 150 : 250;
-            const canvas = document.getElementById('contact-reveal-canvas');
-            const imgLayer = document.getElementById('contact-reveal-img');
-            const contactSection = document.getElementById('panel-contact');
-            
-            if (!canvas || !imgLayer || !contactSection) return;
-            
-            const ctx = canvas.getContext('2d');
-            
-            function resizeCanvas() { 
-                const rect = contactSection.getBoundingClientRect();
-                canvas.width = rect.width; 
-                canvas.height = rect.height; 
-            }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
 
-            const mouse = { x: -999, y: -999 };
-            const smooth = { x: -999, y: -999 };
-            let isHovering = false;
+        /* ─────────────────────────────────────────────────────────
+           4. CONTACT FORM SUBMIT
+        ───────────────────────────────────────────────────────── */
+        window.handleContactSubmit = function (e) {
+            e.preventDefault();
+            const form    = document.getElementById('contact-form');
+            const success = document.getElementById('form-success');
+            const btn     = form.querySelector('.form-submit-btn');
 
-            contactSection.addEventListener('mousemove', e => { 
-                // Get mouse coordinates relative to the contact section
-                const rect = contactSection.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left; 
-                mouse.y = e.clientY - rect.top; 
-                isHovering = true;
-            });
-            
-            contactSection.addEventListener('mouseleave', () => {
-                isHovering = false;
-            });
+            btn.style.transform = 'translate(4px,4px) scale(0.97)';
+            setTimeout(function () {
+                btn.style.transform = '';
+                form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                form.style.opacity   = '0';
+                form.style.transform = 'scale(0.95)';
+                setTimeout(function () {
+                    form.style.display = 'none';
+                    success.style.display = 'flex';
+                    requestAnimationFrame(function () {
+                        success.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.175,0.885,0.32,1.275)';
+                        success.style.opacity    = '1';
+                        success.style.transform  = 'scale(1) rotate(-1deg)';
+                    });
+                }, 400);
+            }, 150);
+        };
 
-            // Touch fallback for mobile
-            contactSection.addEventListener('touchmove', e => {
-                if (e.touches.length > 0) {
-                    const rect = contactSection.getBoundingClientRect();
-                    mouse.x = e.touches[0].clientX - rect.left;
-                    mouse.y = e.touches[0].clientY - rect.top;
-                    isHovering = true;
-                }
-            });
-
-            let time = 0;
-
-            function loop() {
-                // If not hovering, do an auto-looping figure-8 or drift
-                if (!isHovering) {
-                    time += 0.01;
-                    const cx = canvas.width / 2;
-                    const cy = canvas.height / 2;
-                    // Gentle figure-8 path
-                    mouse.x = cx + Math.sin(time * 1.5) * (canvas.width * 0.25);
-                    mouse.y = cy + Math.sin(time * 3) * (canvas.height * 0.15);
-                }
-
-                smooth.x += (mouse.x - smooth.x) * 0.1;
-                smooth.y += (mouse.y - smooth.y) * 0.1;
-                
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                const grad = ctx.createRadialGradient(smooth.x, smooth.y, 0, smooth.x, smooth.y, SPOTLIGHT_R);
-                grad.addColorStop(0, 'rgba(255,255,255,1)');
-                grad.addColorStop(0.4, 'rgba(255,255,255,1)');
-                grad.addColorStop(0.6, 'rgba(255,255,255,0.75)');
-                grad.addColorStop(0.75, 'rgba(255,255,255,0.4)');
-                grad.addColorStop(0.88, 'rgba(255,255,255,0.12)');
-                grad.addColorStop(1, 'rgba(255,255,255,0)');
-
-                ctx.beginPath();
-                ctx.arc(smooth.x, smooth.y, SPOTLIGHT_R, 0, Math.PI * 2);
-                ctx.fillStyle = grad;
-                ctx.fill();
-
-                const dataUrl = canvas.toDataURL();
-                imgLayer.style.webkitMaskImage = 'url(' + dataUrl + ')';
-                imgLayer.style.maskImage = 'url(' + dataUrl + ')';
-                imgLayer.style.webkitMaskSize = '100% 100%';
-                imgLayer.style.maskSize = '100% 100%';
-
-                requestAnimationFrame(loop);
-            }
-            requestAnimationFrame(loop);
-        })();
-
-    });
+    }());
     </script>
 </body>
 </html>
