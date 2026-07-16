@@ -1135,14 +1135,23 @@ body {
     height: 100vh;
     min-height: 800px;
     background-color: var(--contact-bg);
-    background-image: url('contact-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
     color: var(--contact-text);
 }
+
+/* ── Dual-Image Canvas Mask Setup ── */
+.contact-base-img,
+.contact-reveal-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.contact-base-img { z-index: 5; }
+.contact-reveal-img { z-index: 7; pointer-events: none; }
+#contact-reveal-canvas { display: none; }
 
 /* ── UI Layer ── */
 .contact-ui-layer {
