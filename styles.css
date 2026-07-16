@@ -1135,35 +1135,13 @@ body {
     height: 100vh;
     min-height: 800px;
     background-color: var(--contact-bg);
+    background-image: url('contact-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
     color: var(--contact-text);
-}
-
-/* ── Portrait Layers & Spotlight Reveal ── */
-.contact-base-img,
-.contact-reveal-img {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-}
-
-.contact-base-img {
-    z-index: 5;
-    /* Optional: subtly tint or darken the base image to blend with bg */
-    filter: brightness(0.8) grayscale(50%);
-}
-
-.contact-reveal-img {
-    z-index: 7;
-    pointer-events: none; /* Let clicks pass through */
-}
-
-/* We hide the canvas itself since we use it to generate a data URL for the CSS mask */
-#contact-reveal-canvas {
-    display: none;
 }
 
 /* ── UI Layer ── */
