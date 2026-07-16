@@ -281,44 +281,76 @@
     </div>
 
     <!-- ═══════════════ PANEL 4 — CONTACT ═══════════════ -->
-    <div class="comic-panel contact-section" id="panel-contact">
+    <div class="stitch-contact-panel" id="panel-contact">
         
-        <!-- Dual Image Canvas Spotlight Setup -->
-        <div class="contact-base-img" style="background-image:url('contact-bg.png');"></div>
+        <!-- Background image layers -->
+        <div class="stitch-base-img" style="background-image:url('contact-bg.png');"></div>
         <canvas id="contact-reveal-canvas"></canvas>
-        <div class="contact-reveal-img" id="contact-reveal-img" style="background-image:url('contact-reveal-bg.png');"></div>
+        <div class="stitch-reveal-img" id="contact-reveal-img" style="background-image:url('contact-reveal-bg.png');"></div>
 
-        <!-- UI Layer (Everything above the background) -->
-        <div class="contact-ui-layer">
-            
-            <!-- Top Bar -->
-            <div class="contact-top-bar">
-                <div class="contact-logo">YASSINE<br>CHAIBI</div>
+        <!-- Comic action lines overlay -->
+        <div class="stitch-action-lines" aria-hidden="true">
+            <svg width="100%" height="100%">
+                <line x1="0" x2="100%" y1="10%" y2="15%" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                <line x1="90%" x2="85%" y1="0" y2="100%" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                <line x1="0" x2="100%" y1="85%" y2="80%" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            </svg>
+        </div>
+
+        <!-- Main content layout -->
+        <div class="stitch-content">
+
+            <!-- Name / Logo -->
+            <div class="stitch-logo">YASSINE<br>CHAIBI</div>
+
+            <!-- Headline panel -->
+            <div class="stitch-headline-wrap">
+                <div class="stitch-headline-badge">REACH OUT</div>
             </div>
 
-            <!-- Center Headline removed by request -->
+            <!-- Store pill -->
+            <div class="stitch-store-wrap">
+                <a href="#" class="stitch-store-btn">STORE</a>
+            </div>
 
-            <!-- Left & Right Columns -->
-            <div class="contact-columns">
-                <div class="contact-col left-col">
-                    <div class="col-label">PAGES</div>
-                    <ul class="col-nav">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ON TRACK</a></li>
-                        <li><a href="#">OFF TRACK</a></li>
-                        <li><a href="#">CALENDAR</a></li>
-                        <li><a href="#" class="accent-link">STORE</a></li>
-                    </ul>
+            <!-- Social links -->
+            <div class="stitch-socials-panel">
+                <div class="stitch-halftone"></div>
+                <div class="stitch-socials-inner">
+                    <a href="#" class="stitch-social-link">
+                        <span>TIKTOK</span>
+                        <span class="stitch-arrow">↗</span>
+                    </a>
+                    <a href="#" class="stitch-social-link">
+                        <span>INSTAGRAM</span>
+                        <span class="stitch-arrow">↗</span>
+                    </a>
+                    <a href="#" class="stitch-social-link">
+                        <span>YOUTUBE</span>
+                        <span class="stitch-arrow">↗</span>
+                    </a>
+                    <a href="#" class="stitch-social-link">
+                        <span>TWITCH</span>
+                        <span class="stitch-arrow">↗</span>
+                    </a>
                 </div>
-                <div class="contact-col right-col">
-                    <div class="col-label">FOLLOW ON</div>
-                    <ul class="col-nav">
-                        <li><a href="#">TIKTOK</a></li>
-                        <li><a href="#">INSTAGRAM</a></li>
-                        <li><a href="#">YOUTUBE</a></li>
-                        <li><a href="#">TWITCH</a></li>
-                    </ul>
+            </div>
+
+            <!-- Business Enquiries CTA -->
+            <a href="mailto:chaibiyassine0801@gmail.com" class="stitch-cta-btn">
+                <span class="stitch-cta-halftone"></span>
+                <span class="stitch-cta-text">BUSINESS ENQUIRIES ↗</span>
+            </a>
+
+            <!-- Accent decorations -->
+            <div class="stitch-accents">
+                <div class="stitch-accent-bar"></div>
+                <div class="stitch-accent-diamonds">
+                    <div class="stitch-diamond stitch-diamond--red"></div>
+                    <div class="stitch-diamond stitch-diamond--grey"></div>
+                    <div class="stitch-diamond stitch-diamond--red"></div>
                 </div>
+                <div class="stitch-accent-bar"></div>
             </div>
 
         </div>
